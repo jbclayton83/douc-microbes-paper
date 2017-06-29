@@ -37,7 +37,7 @@ num_sig = sum(Wld.Qvals < 0.05, na.rm = T) # Count how many are significant
 C_ix = map$CaptiveWild=="Captive"          # Stores "true" if monkey is captive, else "false"
 W_ix = map$CaptiveWild=="Wild"             # As above. Use these to select just wild/captive monkeys
 sink(file = "Dumped_Significance.txt")     # Store output to a text file
-cat("Pathway\tGroupwise_Q\tCaptiveVsQild_Q\tTrendInCaptivity\n")  # The header line in the file
+cat("Pathway\tGroupwise_Q\tCaptiveVsWild_Q\tTrendInCaptivity\n")  # The header line in the file
 if (num_sig) for (i in 1:num_sig) {        # Loop through all significant pathways
   upInCaptive = mean(picrust[PicrustIDs[i],C_ix]) > mean(picrust[PicrustIDs[i],W_ix]) # compare avgs
   cat(PicrustIDs[i],'\t',Grp.Qvals[i],'\t',Wld.Qvals[i],'\t',ifelse(upInCaptive,"UP","DOWN"),'\n')
@@ -71,11 +71,11 @@ plot(FBratio ~ map$PA, xlab="Population", ylab="Log F:B ratio")
 #### PCoA plots #### (requires map and otu table loaded) [otu table in prev section preferred?]
 source('pcoa_helper.R') # This gives us our nice pcoa functions
 tree = read_tree_greengenes('EMP_seqs_R1_Doucs_rep_set_open_ref.tre')
-otu.s = as.matrix(otu[,-ncol(otu)])
-bray = vegdist(t(otu.s))
-plot_pcoa(bray,map,category = 'Population')
+otu.s = as.matrix(otu[,-ncol(otu)])  # Rip of the taxonomy column, as it is not needed 
+bray = vegdist(t(otu.s))             # Get some bray curtis distances
+plot_pcoa(bray,map,category = 'Population')  # Plot the Bray Curtis distances
 pcoa.u = plot_unifrac(otu.s,map,tree,category = 'Population',weighted=F)
 pcoa.w = plot_unifrac(otu.s,map,tree,category = 'Population',weighted=T)
-adonis(pcoa.u ~ map$Population) # Do stats for clustering (unweighted)
-adonis(pcoa.w ~ map$Population) # Do stats for clustering (weighted)
-adonis(bray ~ map$Population) # Do stats for bray-curtis too
+adonis(pcoa.u ~ map$Population)      # Do stats for clustering (unweighted)
+adonis(pcoa.w ~ map$Population)      # Do stats for clustering (weighted)
+adonis(bray ~ map$Population)        # Do stats for bray-curtis too, why not
