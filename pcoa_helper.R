@@ -15,7 +15,7 @@ registerDoParallel(cl);
 plot_pcoa = function(dist_obj, sub.map, category, do_ellipse = T, title = NULL) {
   pc = pcoa(dist_obj);
   PCOA = data.frame(pc$vectors);
-  for (i in 1:ncol(PCOA)) names(PCOA)[i] = sprintf("PC%d",i); #paste("PC",i,sep = "");
+  for (i in 1:ncol(PCOA)) names(PCOA)[i] = sprintf("PC%d",i); 
   PCOA[,category] = sub.map[,category];
   p = ggplot(PCOA) +
     geom_point(aes(x = PC1, y = PC2, color = PCOA[,category])) +

@@ -55,9 +55,9 @@ text(myplot,myData,myData, pos=3)                    # Add numbers on top of the
 
 #### F/B Ratio ####
 otu = read.delim('EMP_seqs_R1_Doucs_otu_table_mc2_w_tax_open_ref_NO_CHLOROPLASTS.txt',row=1,skip=1)
-otu = otu[,c(rownames(map),"taxonomy")]
-isFirmicutes = grepl('p__Firmicutes',otu$taxonomy) #rownames(otu))
-isBacteroides = grepl('p__Bacteroidetes',otu$taxonomy) #,rownames(otu))
+otu = otu[,c(rownames(map),"taxonomy")]  # sync the sample names for the OTU table
+isFirmicutes = grepl('p__Firmicutes',otu$taxonomy) # Save "trues" where Firmicutes, false otherwise
+isBacteroides = grepl('p__Bacteroidetes',otu$taxonomy) # Like above
 FBratio = log(colSums(otu[isFirmicutes,-ncol(otu)])/colSums(otu[isBacteroides,-ncol(otu)]))
 
 kruskal.test(FBratio ~ map$PA)
@@ -72,7 +72,10 @@ plot(FBratio ~ map$PA, xlab="Population", ylab="Log F:B ratio")
 source('pcoa_helper.R') # This gives us our nice pcoa functions
 tree = read_tree_greengenes('EMP_seqs_R1_Doucs_rep_set_open_ref.tre')
 otu.s = as.matrix(otu[,-ncol(otu)])
+bray = vegdist(t(otu.s))
+plot_pcoa(bray,map,category = 'Population')
 pcoa.u = plot_unifrac(otu.s,map,tree,category = 'Population',weighted=F)
 pcoa.w = plot_unifrac(otu.s,map,tree,category = 'Population',weighted=T)
 adonis(pcoa.u ~ map$Population) # Do stats for clustering (unweighted)
 adonis(pcoa.w ~ map$Population) # Do stats for clustering (weighted)
+adonis(bray ~ map$Population) # Do stats for bray-curtis too
