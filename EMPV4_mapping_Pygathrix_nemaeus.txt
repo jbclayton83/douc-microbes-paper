@@ -1,0 +1,112 @@
+#SampleID	BarcodeSequence	LinkerPrimerSequence	TargetSubfragment	PrimateOther	SpeciesCommonName	SpeciesScientificName	CaptivityIndex	CaptiveWild	Population	AnimalID	Sex	AgeClassorAge	DateCollection	Description
+LSG.MB1		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AM (LSM)	Male	Adult	21-Mar-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB2		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AM (LSM)	Male	Adult	10-Apr-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB3		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AM (LSM)	Male	Adult	2-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB4		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AM (LSM)	Male	Adult	3-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB5		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AFO	Female	Adult	3-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB6		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AFY	Female	Adult	8-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB7		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AFO	Female	Adult	8-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB8		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AM (LSM)	Male	Adult	9-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB9		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AFY	Female	Adult	9-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB10		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AM (LSM)	Male	Adult	15-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB11		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AFO	Female	Adult	25-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB12		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AM (LSM)	Male	Adult	24-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB13		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	Unknown	Female	Adult	24-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB14		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AM (LSM)	Male	Adult	31-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB15		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AFO	Female	Adult	31-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB16		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AFY	Female	Adult	31-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB17		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AFO	Female	Adult	31-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB18		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_JUV	Male	Juvenile	31-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB19		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AM (LSM)	Male	Adult	6-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LSG.MB20		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Left Scar Group	LSG_AFY	Female	Adult	6-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+RSG.MB1		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Right Scar Group	RSG_AM_2	Male	Adult	26-Mar-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+RSG.MB2		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Right Scar Group	RSG_SubAM_1	Male	Subadult	26-Mar-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+RSG.MB3		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Right Scar Group	RSG_AM (RSM)	Male	Adult	26-Mar-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+RSG.MB4		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Right Scar Group	RSG_AM (RSM)	Male	Adult	27-Mar-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+RSG.MB5		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Right Scar Group	RSG_AM (RSM)	Male	Adult	29-Mar-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+RSG.MB6		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Right Scar Group	RSG_AM (RSM)	Male	Adult	4-Apr-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+RSG.MB7		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Right Scar Group	RSG_SubAM_1	Male	Subadult	4-Apr-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+LFG.MB1		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	Long face group	LFG_AM (LFM)	Male	Adult	30-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB1		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	13-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB2		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	13-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB3		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Male	Adult	13-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB4		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Female	Adult	13-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB5		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	13-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB6		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Male	Adult	13-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB7		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	13-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB8		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	13-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB9		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	13-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB10		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Male	Adult	13-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB11		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Male	Adult	15-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB12		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Female	Adult	15-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB13		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	15-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB14		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Male	Adult	15-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB15		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Male	Adult	15-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB16		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	16-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB17		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Male	Adult	23-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB18		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	28-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB19		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Male	Adult	28-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB20		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	29-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB21		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	29-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB22		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Adult	29-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB23		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	29-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB24		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	29-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB25		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Adult	29-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB26		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	30-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB27		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	30-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB28		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Female	Adult	31-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB29		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Male	Adult	31-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB30		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	31-May-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB31		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	5-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB32		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	6-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB33		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Male	Adult	6-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB34		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	12-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB35		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	12-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB36		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	13-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB37		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Unknown	Unknown	14-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+UNKG.MB38		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	0	Wild	UNKG	Unknown	Male	Adult	14-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+PZ.MB1		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Philadelphia Zoo	103954	Male	Adult	1-Aug-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+PZ.MB2		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Philadelphia Zoo	104658	Female	Adult	1-Aug-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+PZ.MB3		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Philadelphia Zoo	103954	Male	Adult	1-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+PZ.MB4		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Philadelphia Zoo	104658	Female	Adult	1-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+PZ.MB5		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Philadelphia Zoo	103954	Male	Adult	7-Jul-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+PZ.MB6		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Philadelphia Zoo	104658	Female	Adult	7-Jul-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+PZ.MB7		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Philadelphia Zoo	103954	Male	Adult	15-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+PZ.MB8		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Philadelphia Zoo	104658	Female	Adult	15-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+PZ.MB9		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Philadelphia Zoo	103954	Male	Adult	22-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+PZ.MB10		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Philadelphia Zoo	104658	Female	Adult	21-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+PZ.MB11		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Philadelphia Zoo	103954	Male	Adult	29-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+PZ.MB12		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Philadelphia Zoo	104658	Female	Adult	14-Jul-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+SZ.MB1		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Singapore Zoo	G11848	Female	24-Jun-10	29-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+SZ.MB2		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Singapore Zoo	G11785	Female	6-May-10	29-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+SZ.MB3		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Singapore Zoo	G12385	Female	24-Jul-11	29-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+SZ.MB4		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Singapore Zoo	G12385	Female	24-Jul-11	30-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+SZ.MB5		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Singapore Zoo	G11785	Female	6-May-10	30-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+SZ.MB6		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Singapore Zoo	G11848	Female	24-Jun-10	30-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+SZ.MB7		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Singapore Zoo	G7516	Male	Adult	30-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+SZ.MB8		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Singapore Zoo	G10704	Male	1-May-06	30-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+SZ.MB9		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Singapore Zoo	G10883	Male	12-Mar-07	30-Jun-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+SZ.MB10		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Singapore Zoo	G8801	Male	Adult	1-Jul-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+SZ.MB11		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Singapore Zoo	G7516	Male	Adult	1-Jul-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+SZ.MB12		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Singapore Zoo	G10704	Male	1-May-06	1-Jul-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+SZ.MB13		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Singapore Zoo	G11785	Female	6-May-10	1-Jul-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+SZ.MB14		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Singapore Zoo	G10883	Male	12-Mar-07	2-Jul-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+SZ.MB15		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	2	Captive	Singapore Zoo	G8801	Male	Adult	3-Jul-13	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB1		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-60	Male	2007	18-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB2		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-09	Male	Adult	18-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB3		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-55	Female	02.02.08	18-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB4		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-12	Male	Adult	19-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB5		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-21	Female	Adult	19-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB6		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-75	Male	05.02.12	19-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB7		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-14	Male	Adult	19-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB8		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-28	Male	Adult	20-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB9		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-31	Female	Adult	20-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB10		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-69	Male	19.08.10	20-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB11		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-29	Male	Adult	21-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB12		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-38	Female	Unknown	21-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB13		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-06	Male	Adult	21-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB14		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-42	Male	Adult	23-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB15		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-53	Female	Adult	23-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB16		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-73	Female	19.05.11	23-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB17		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-62	Male	17.03.09	24-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
+EPRC.MB18		GTGCCAGCMGCCGCGGTAA	EMP_V4	Primate	red-shanked douc	Pygathrix nemaeus	1	Semi-captive	EPRC	6-58	Female	27.03.08	25-Oct-12	EMP_V4 red-shanked douc and mantled howling monkey 16S sequences
