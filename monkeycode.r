@@ -1,5 +1,5 @@
 #### DATA WRANGLING ####
-setwd('/data/analyses/monkey/') # Sets the working directory
+#setwd('/data/analyses/monkey/') # Sets the working directory
 map = read.delim('EMPV4_mapping_Pygathrix_nemaeus.txt', row.names = 1) # Grab the map
 picrust = read.delim('EMPV4_Doucs_R1only_NO_CHLOROPLASTS_ko_metagenome_at_level3.txt', 
                      skip=1, row.names = 1) #Grab picrust table, skipping bad first row
@@ -67,6 +67,9 @@ for (i in 1:length(levels(map$PA))) for (j in i:length(levels(map$PA))) {
   cat(levels(map$PA)[i]," vs ",levels(map$PA)[j]," p = ",p$p.value,"\n")
 }
 plot(FBratio ~ map$PA, xlab="Population", ylab="Log F:B ratio")
+df = data.frame(FBratio, map$PA)     # Split manually into groups
+tapply(df$FBratio, df$map.PA, mean)  # Get the means per group
+tapply(df$FBratio, df$map.PA, sd)    # Gets the standard devs per group
 
 #### PCoA plots #### (requires map and otu table loaded) [otu table in prev section preferred?]
 source('pcoa_helper.R') # This gives us our nice pcoa functions
