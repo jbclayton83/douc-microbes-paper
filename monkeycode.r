@@ -102,14 +102,14 @@ boxplot(dists[,1] ~ map$Population, horizontal=T, las=2, ylim=c(-0.18,0.42),
 # Massage the taxa names
 for (i in 1:7) otu$taxonomy = gsub("; .__$","",otu$taxonomy, perl=T)
 
-split = strsplit(otu$taxonomy,"; ")                 # Split by semicolon into levels
+split = strsplit(otu$taxonomy,"; ")                    # Split by semicolon into levels
 taxaStrings = sapply(split,function(x) paste(x[1:6],collapse=";"))
-otu.t = rowsum(otu[,-ncol(otu)],taxaStrings)         # Collapse at desired level
-otu.t = sweep(otu.t,2,colSums(otu.t),'/');           # Normalize to relative abundance
-otu.t = otu.t[rowMeans(otu.t) >= 0.0001,];           # Drop rare taxa (abundance)
-otu.t = otu.t[rowSums(otu.t > 0) >= 3,];              # Drop rare taxa (prevalence)
-otu.t = sweep(otu.t,2,colSums(otu.t),'/');           # Re-normalize to relative abundance
-otu.t = otu.t[order(rowMeans(otu.t),decreasing=T),]; # Sort by avg. abundance
+otu.t = rowsum(otu[,-ncol(otu)],taxaStrings)           # Collapse at desired level
+otu.t = sweep(otu.t,2,colSums(otu.t),'/');             # Normalize to relative abundance
+otu.t = otu.t[rowMeans(otu.t) >= 0.0001,];             # Drop rare taxa (abundance)
+otu.t = otu.t[rowSums(otu.t > 0) >= 3,];               # Drop rare taxa (prevalence)
+otu.t = sweep(otu.t,2,colSums(otu.t),'/'); # Re-normalize to relative abundance
+otu.t = otu.t[order(rowMeans(otu.t),decreasing=T),];   # Sort by avg. abundance
 
 # Go through each taxon and test for significance w/group
 #install.packages("polycor")
@@ -140,13 +140,13 @@ num_sig = sum(Grp.Qvals < .05, na.rm = T) # Count how many are significant
 C_ix = map$CaptiveWild=="Captive"          # Stores "true" if monkey is captive, else "false"
 W_ix = map$CaptiveWild=="Wild"             # As above. Use these to select just wild/captive monkeys
 sink(file = "taxa_Significance.txt")                 # Get ready to write the significant ones
-cat("Taxon\tPolyserial_Q\tPolyserial_Cor\tCaptiveVsWild_Q\tTrendInCaptivity\n")  # The header line in the file
 pdf("TaxaSwarms.pdf",width = 8,height=7)
+cat("Taxon\tPolyserial_Q\tPolyserial_Cor\tCaptiveVsWild_Q\tTrendInCaptivity\n")  # The header line in the file
 if (num_sig) for (i in 1:num_sig) {
   upInCaptive = mean(otu.t[taxIDs[i],C_ix]) > mean(otu.t[taxIDs[i],W_ix]) # compare avgs
   cat(taxIDs[i],'\t',Grp.Qvals[i],'\t',-Grp.Corrs[i],'\t',Wld.Qvals[i],'\t',ifelse(upInCaptive,"UP","DOWN"),'\n',sep='')
   beeswarm(otu.t[taxIDs[i],] ~ map$PA, col=c("#F8766D","#7CAE00","#00BFC4","#C77CFF"), # library(beeswarm)
            xlab="Population",ylab="Relative Abundance",main=taxIDs[i],cex.axis=1.1,cex.main=0.75,corral="random")
 }
-dev.off()
 sink(NULL)
+dev.off()
