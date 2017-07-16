@@ -23,8 +23,10 @@ otu.cr = otu.cr[,c(rownames(map))]  # sync the sample names for the OTU table
 sum(otu.cr)
 otu.cr = otu.cr[rowMeans(otu.cr) >= 0.01,]
 sum(otu.cr)
+otu.raw97 = read.delim('combined_puregg97.otu',row=1)
+otu.raw97 = otu.raw97[,c(rownames(map))]
 pdf("ReadDepth_closed.pdf",width=8)
-plot(colSums(otu.cr) ~ map$Lifestyle,xlab="Lifestyle",ylab="Read depth (closed)")
+plot(colSums(otu.raw97) ~ map$Lifestyle,xlab="Lifestyle",ylab="Read depth (closed)",col=lscolors)
 dev.off()
 
 # Re-normalize PICRUSt stage 1 output with the centered log-ratio, feed to predict/summarize
@@ -47,7 +49,7 @@ picrust = as.matrix(picrust[,rownames(map)]) # sync and drop extra
 nsti = read.delim('nsti_orig.picrustp',row=1)
 nsti = nsti[rownames(map),]
 pdf("NSTI.pdf",width=8)
-plot(nsti$Value ~ map$Lifestyle,ylab="NSTI index",xlab="Lifestyle")
+plot(nsti$Value ~ map$Lifestyle,ylab="NSTI index",xlab="Lifestyle",col=lscolors)
 dev.off()
 
 # Go through each picrust pathway and test for significance w/group
@@ -144,7 +146,7 @@ dev.off()
 otu = read.delim('EMP_seqs_R1_Doucs_otu_table_mc2_w_tax_open_ref_NO_CHLOROPLASTS.txt',row=1,skip=1,as.is=T)
 otu = otu[,c(rownames(map),"taxonomy")]  # sync the sample names for the OTU table
 pdf("ReadDepth_open.pdf",width=8)
-plot(colSums(otu[,-ncol(otu)]) ~ map$Lifestyle,xlab="Lifestyle",ylab="Read depth (open)")
+plot(colSums(otu[,-ncol(otu)]) ~ map$Lifestyle,xlab="Lifestyle",ylab="Read depth (open)",col=lscolors)
 dev.off()
 isFirmicutes = grepl('p__Firmicutes',otu$taxonomy)     # Save "trues" for Firmicutes, false otherwise
 isBacteroides = grepl('p__Bacteroidetes',otu$taxonomy) # Like above for Bacteroidetes
@@ -157,7 +159,7 @@ for (i in 1:length(levels(map$PA))) for (j in i:length(levels(map$PA))) {
   cat(levels(map$PA)[i]," vs ",levels(map$PA)[j]," p = ",p$p.value,"\n",sep='')
 }
 pdf("FBratio.pdf",width=8)
-plot(FBratio ~ map$PA, xlab="Lifestyle", ylab="Log F:B ratio")
+plot(FBratio ~ map$PA, xlab="Lifestyle", ylab="Log F:B ratio",col=lscolors)
 dev.off()
 df = data.frame(FBratio, map$PA)     # Split manually into groups
 tapply(df$FBratio, df$map.PA, mean)  # Get the means per group
