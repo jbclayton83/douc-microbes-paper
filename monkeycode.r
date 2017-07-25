@@ -89,19 +89,21 @@ if (num_sig) for (i in 1:num_sig) {
   upInCaptive = mean(picrust[cur,C_ix]) > mean(picrust[cur,W_ix]) # compare avgs
   cat(cur,'\t',df$Grp.Pvals[i],'\t',-df$Grp.Corrs[i],'\t',df$Wld.Pvals[i],'\t',
       ifelse(upInCaptive,"UP","DOWN"),'\n',sep='')
-  beeswarm(picrust[cur,] ~ map$PA, col=lscolors, # library(beeswarm)
-           xlab="Lifestyle",ylab="Relative Abundance",main=cur,cex.axis=1.1,cex.main=0.75,corral="random")
+  beeswarm(picrust[cur,] ~ map$PA, xlab="Lifestyle",ylab="Relative Abundance",main=cur,
+           col=alpha(lscolors,0.7),cex.axis=1.1,cex.main=0.75,cex=1.1,corral="random",pch=19)
 }
 sink(NULL)                                 # Close the output file
 dev.off()
 
 # PICRUSt heatmap too, why not
-my_palette <- colorRampPalette(c("red", "black", "green"))(n = 299) # Sebastian Raschka
+library(gplots)
+my_palette <- colorRampPalette(c("blue", "black", "yellow"))(n = 299) # Sebastian Raschka
 gl = map$Lifestyle
 glpos = c(grep("Captive",gl),grep("Semi-captive",gl),grep("Semi-wild",gl),grep("Wild",gl))
 gl = gl[glpos]
 mat = picrust[rownames(df[abs(df$Grp.Corrs) > 0.6,]),glpos]
-mat = sweep(mat,1,rowSums(abs(mat)),'/')                # Normalize to relative abundance
+mat = sweep(mat,1,rowSums(abs(mat)),'/')                      # Normalize to relative abundance
+mat = sweep(mat,1,max(apply(mat,1,max),apply(mat,1,min)),'/') # Constrain extrema to [-1, 1]
 
 levels(gl)= lscolors #c("red","orange","yellow","green")
 
@@ -121,6 +123,7 @@ heatmap.2(mat,
           #breaks=col_breaks,    # enable color transition at specified limits
           ColSideColors = as.character(gl),
           dendrogram="row",     # only draw a row dendrogram
+          #hclustfun = function(x) hclust(as.dist(1 - cor(as.matrix(x))), method="complete"),
           Colv="NA")            # turn off column clustering
 par(lend = 1)           # square line ends for the color legend
 legend("topright",      # location of the legend on the heatmap plot
@@ -135,7 +138,7 @@ dev.off()
 # Manually generate fig 6 of the paper. 
 pdf("DietDiv.pdf",width = 8)
 par(oma=c(0,2,0,0))                                  # Margins!
-myData = c(1,15,43,57)                               # Data!
+myData = c(1,15,44,57)                               # Data!
 myplot = barplot(myData, names=levels(map$Lifestyle), ylim = c(0,62), xlab = "Lifestyle", ylab = "",
                  col=lscolors)
 mtext("Dietary Biodiversity\n(Number of plant species)",side=2,line=3) # Special Y axis!
@@ -174,16 +177,25 @@ dix = "shannon"
 div = diversity(otu.r,index=dix)
 otu.ad = data.frame(Div=div, Lifestyle=map$Lifestyle)
 grps = levels(map$Lifestyle)
-lab = paste0("Alpha Diversity (",dix,")")
+lab = "Alpha Diversity (Shannon)" #paste0("Alpha Diversity (",dix,")")
 pdf(paste0("AlphaDiv_",dix,".pdf"),width = 8)
 plot(ggplot(otu.ad,aes(x=Lifestyle,y=Div,fill=Lifestyle)) + ylab(lab) + geom_violin(alpha=0.3) + 
-  geom_signif(comparisons = list(grps[c(1,2)],grps[c(3,4)]), test='t.test', map_signif_level = T) + 
-  geom_signif(comparisons = list(grps[c(2,4)]), test='t.test', map_signif_level = T, y_position = 6.1) +
-  geom_signif(comparisons = list(grps[c(1,3)]), test='t.test', map_signif_level = T, y_position = 6.3) +
-  geom_signif(comparisons = list(grps[c(1,4)]), test='t.test', map_signif_level = T, y_position = 6.5) +
-  geom_jitter(aes(color=Lifestyle),position=position_jitter(0.2),size=2) )
+       geom_signif(comparisons = list(grps[c(1,2)],grps[c(3,4)]), test='t.test', map_signif_level = T) + 
+       geom_signif(comparisons = list(grps[c(2,4)]), test='t.test', map_signif_level = T, y_position = 6.1) +
+       geom_signif(comparisons = list(grps[c(1,3)]), test='t.test', map_signif_level = T, y_position = 6.3) +
+       geom_signif(comparisons = list(grps[c(1,4)]), test='t.test', map_signif_level = T, y_position = 6.5) +
+       geom_jitter(aes(color=Lifestyle),position=position_jitter(0.2),size=2) )
 dev.off()
-
+otu.cd = data.frame(Div=rowSums(otu.r > 0), Lifestyle=map$Lifestyle)
+lab = "Alpha Diversity (Observed OTUs)"
+pdf("AlphaDiv_ObsOTU.pdf",width=8)
+plot(ggplot(otu.cd,aes(x=Lifestyle,y=Div,fill=Lifestyle)) + ylab(lab) + geom_violin(alpha=0.3) + 
+       geom_signif(comparisons = list(grps[c(1,2)],grps[c(3,4)]), test='t.test', map_signif_level = T) + 
+       geom_signif(comparisons = list(grps[c(2,4)]), test='t.test', map_signif_level = T, y_position = 5500) +
+       geom_signif(comparisons = list(grps[c(1,3)]), test='t.test', map_signif_level = T, y_position = 5850) +
+       geom_signif(comparisons = list(grps[c(1,4)]), test='t.test', map_signif_level = T, y_position = 6200) +
+       geom_jitter(aes(color=Lifestyle),position=position_jitter(0.2),size=2) )
+dev.off()
 
 #### PCoA plots #### (requires map and otu table loaded) 
 source('pcoa_helper.R') # This gives us our nice pcoa functions
@@ -337,22 +349,23 @@ for (L in 1:length(bT)) {
     upInCaptive = mean(otu.t[taxon,C_ix]) > mean(otu.t[taxon,W_ix]) # compare avgs
     cat(taxon,'\t',res$Grp.Pvals[i],'\t',-res$Grp.Corrs[i],'\t',res$Wld.Pvals[i],'\t',
         ifelse(upInCaptive,"UP","DOWN"),'\n',sep='')
-    beeswarm(otu.t[taxon,] ~ map$PA, col=lscolors, xlab="Lifestyle",ylab="Relative Abundance",
-             main=taxon,cex.axis=1.1,cex.main=0.75,corral="random")
+    beeswarm(otu.t[taxon,] ~ map$PA, xlab="Lifestyle",ylab="Relative Abundance",main=taxon,
+             col=alpha(lscolors,0.7),cex.axis=1.1,cex.main=0.75,cex=1.1,corral="random",pch=19)
   }
   sink(NULL)
   dev.off()
   
   ## Heatmap
   # Need to have created the clr taxa[+plant] table as a matrix
-  my_palette <- colorRampPalette(c("red", "black", "green"))(n = 299) # Sebastian Raschka
+  my_palette <- colorRampPalette(c("blue", "black", "yellow"))(n = 299) # Sebastian Raschka
   gl = map$Lifestyle
   glpos = c(grep("Captive",gl),grep("Semi-captive",gl),grep("Semi-wild",gl),grep("Wild",gl))
   gl = gl[glpos]
   mat = otu.t[rownames(res),glpos]
+  mat = mat[-grep("Viridiplantae",rownames(mat)),,drop=F]
+  #mat = sweep(mat,1,max(apply(mat,1,max),apply(mat,1,min)),'/')
   
-  levels(gl)= lscolors #c("red","orange","yellow","green")
-  
+  levels(gl)= lscolors 
   png(paste0("Taxa_heatmap_L",bT[L],".png"),  # create PNG for the heat map        
       width = 8.5*300,                        # 5 x 300 pixels
       height = 6*300,
@@ -369,7 +382,41 @@ for (L in 1:length(bT)) {
            #breaks=col_breaks,    # enable color transition at specified limits
             ColSideColors = as.character(gl),
             dendrogram="row",     # only draw a row dendrogram
-            Colv="NA")            # turn off column clustering
+            hclustfun = function(x) hclust(as.dist(1 - cor(as.matrix(x))), method="complete"),
+            Colv="NA"            # turn off column clustering
+  )
+  par(lend = 1)           # square line ends for the color legend
+  legend("topright",      # location of the legend on the heatmap plot
+         legend = levels(map$Lifestyle), # category labels
+         col = levels(gl),  # color key
+         lty= 1,             # line style
+         lwd = 10            # line width
+  )
+  dev.off()
+  
+  # repeat for plants alone
+  mat = otu.t[rownames(res),glpos]
+  mat = mat[grep("Viridiplantae",rownames(mat)),,drop=F]
+  if (nrow(mat) < 2) next
+  png(paste0("Plant_heatmap_L",pT[L],".png"),  # create PNG for the heat map        
+      width = 8.5*300,                        # 5 x 300 pixels
+      height = 6*300,
+      res = 300,                              # 300 pixels per inch
+      pointsize = 6)                          # smaller font size
+  heatmap.2(mat,
+            #cellnote = mat,  # same data set for cell labels
+            main = "", # heat map title
+            notecol="black",      # change font color of cell labels to black
+            density.info="none",  # turns off density plot inside color legend
+            trace="none",         # turns off trace lines inside the heat map
+            margins =c(6,36),     # widens margins around plot
+            col=my_palette,       # use on color palette defined earlier
+            #breaks=col_breaks,    # enable color transition at specified limits
+            ColSideColors = as.character(gl),
+            dendrogram="row",     # only draw a row dendrogram
+            hclustfun = function(x) hclust(as.dist(1 - cor(as.matrix(x))), method="complete"),
+            Colv="NA"            # turn off column clustering
+  )
   par(lend = 1)           # square line ends for the color legend
   legend("topright",      # location of the legend on the heatmap plot
          legend = levels(map$Lifestyle), # category labels
