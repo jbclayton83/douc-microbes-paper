@@ -89,8 +89,9 @@ if (num_sig) for (i in 1:num_sig) {
   upInCaptive = mean(picrust[cur,C_ix]) > mean(picrust[cur,W_ix]) # compare avgs
   cat(cur,'\t',df$Grp.Pvals[i],'\t',-df$Grp.Corrs[i],'\t',df$Wld.Pvals[i],'\t',
       ifelse(upInCaptive,"UP","DOWN"),'\n',sep='')
-  beeswarm(picrust[cur,] ~ map$PA, xlab="Lifestyle",ylab="Relative Abundance",main=cur,
+  beeswarm(picrust[cur,] ~ map$PA, xlab="Lifestyle",ylab="CLR Relative Abundance",main=cur,
            col=alpha(lscolors,0.7),cex.axis=1.1,cex.main=0.75,cex=1.1,corral="random",pch=19)
+  bxplot(picrust[cur,] ~ map$PA, add = TRUE)
 }
 sink(NULL)                                 # Close the output file
 dev.off()
@@ -111,20 +112,22 @@ png("PiMap.png",  # create PNG for the heat map
     width = 8.5*300,                        # 5 x 300 pixels
     height = 6*300,
     res = 300,                              # 300 pixels per inch
-    pointsize = 6)                          # smaller font size
+    pointsize = 6.15)                          # smaller font size
 heatmap.2(mat,
           #cellnote = mat,  # same data set for cell labels
           main = "", # heat map title
           notecol="black",      # change font color of cell labels to black
           density.info="none",  # turns off density plot inside color legend
           trace="none",         # turns off trace lines inside the heat map
-          margins =c(6,36),     # widens margins around plot
+          margins =c(6,37),     # widens margins around plot
           col=my_palette,       # use on color palette defined earlier
           #breaks=col_breaks,    # enable color transition at specified limits
           ColSideColors = as.character(gl),
           dendrogram="row",     # only draw a row dendrogram
-          #hclustfun = function(x) hclust(as.dist(1 - cor(as.matrix(x))), method="complete"),
-          Colv="NA")            # turn off column clustering
+          lhei=c(1,6.5), lwid=c(1,5),
+          hclustfun = function(x) hclust(as.dist(1 - cor(as.matrix(x))), method="complete"),
+          Colv="NA"            # turn off column clustering
+)
 par(lend = 1)           # square line ends for the color legend
 legend("topright",      # location of the legend on the heatmap plot
        legend = levels(map$Lifestyle), # category labels
@@ -133,7 +136,6 @@ legend("topright",      # location of the legend on the heatmap plot
        lwd = 10            # line width
 )
 dev.off()
-
 #### Figure 6 Stuff ####
 # Manually generate fig 6 of the paper. 
 pdf("DietDiv.pdf",width = 8)
@@ -279,7 +281,8 @@ for (L in 1:length(bT)) {
   }
   
   # Taxa barplots -- Top 15 most abundant (kruskal sig. + other?)
-  otu.m = sweep(sqrt(otu.n),2,colSums(sqrt(otu.n)),'/')
+  otu.m = otu.n[-grep("Viridiplantae",rownames(otu.n)),,drop=F]
+  otu.m = sweep(sqrt(otu.m),2,colSums(sqrt(otu.m)),'/')
   meanAb = apply(otu.m,1,FUN=function(x) tapply(x, map$Lifestyle, mean)) # group mean
   
   #select = apply(meanAb,2,max) > 0.01
@@ -349,8 +352,9 @@ for (L in 1:length(bT)) {
     upInCaptive = mean(otu.t[taxon,C_ix]) > mean(otu.t[taxon,W_ix]) # compare avgs
     cat(taxon,'\t',res$Grp.Pvals[i],'\t',-res$Grp.Corrs[i],'\t',res$Wld.Pvals[i],'\t',
         ifelse(upInCaptive,"UP","DOWN"),'\n',sep='')
-    beeswarm(otu.t[taxon,] ~ map$PA, xlab="Lifestyle",ylab="Relative Abundance",main=taxon,
+    beeswarm(otu.t[taxon,] ~ map$PA, xlab="Lifestyle",ylab="CLR Relative Abundance",main=taxon,
              col=alpha(lscolors,0.7),cex.axis=1.1,cex.main=0.75,cex=1.1,corral="random",pch=19)
+    bxplot(otu.t[taxon,] ~ map$PA, add = TRUE)
   }
   sink(NULL)
   dev.off()
@@ -370,18 +374,19 @@ for (L in 1:length(bT)) {
       width = 8.5*300,                        # 5 x 300 pixels
       height = 6*300,
       res = 300,                              # 300 pixels per inch
-      pointsize = 6)                          # smaller font size
+      pointsize = 6.15)                          # smaller font size
   heatmap.2(mat,
             #cellnote = mat,  # same data set for cell labels
             main = "", # heat map title
             notecol="black",      # change font color of cell labels to black
             density.info="none",  # turns off density plot inside color legend
             trace="none",         # turns off trace lines inside the heat map
-            margins =c(6,36),     # widens margins around plot
+            margins =c(6,37),     # widens margins around plot
             col=my_palette,       # use on color palette defined earlier
            #breaks=col_breaks,    # enable color transition at specified limits
             ColSideColors = as.character(gl),
             dendrogram="row",     # only draw a row dendrogram
+           lhei=c(1,6.5), lwid=c(1,5),
             hclustfun = function(x) hclust(as.dist(1 - cor(as.matrix(x))), method="complete"),
             Colv="NA"            # turn off column clustering
   )
@@ -402,18 +407,19 @@ for (L in 1:length(bT)) {
       width = 8.5*300,                        # 5 x 300 pixels
       height = 6*300,
       res = 300,                              # 300 pixels per inch
-      pointsize = 6)                          # smaller font size
+      pointsize = 6.15)                          # smaller font size
   heatmap.2(mat,
             #cellnote = mat,  # same data set for cell labels
             main = "", # heat map title
             notecol="black",      # change font color of cell labels to black
             density.info="none",  # turns off density plot inside color legend
             trace="none",         # turns off trace lines inside the heat map
-            margins =c(6,36),     # widens margins around plot
+            margins =c(6,37),     # widens margins around plot
             col=my_palette,       # use on color palette defined earlier
             #breaks=col_breaks,    # enable color transition at specified limits
             ColSideColors = as.character(gl),
             dendrogram="row",     # only draw a row dendrogram
+            lhei=c(1,6.5), lwid=c(1,5),
             hclustfun = function(x) hclust(as.dist(1 - cor(as.matrix(x))), method="complete"),
             Colv="NA"            # turn off column clustering
   )
