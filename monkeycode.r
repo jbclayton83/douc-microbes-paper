@@ -286,7 +286,7 @@ for (L in 1:length(bT)) {
     KW.Pvals[m.ix] = kruskal.test(otu.t[m.ix,] ~ map$Lifestyle)$p.val
   }
   
-  # Taxa barplots -- Top 15 most abundant (kruskal sig. + other?)
+  ## Taxa barplots -- Top 15 most abundant (kruskal sig. + other?)
   otu.m = otu.n[-grep("Viridiplantae",rownames(otu.n)),,drop=F]
   otu.m = sweep(sqrt(otu.m),2,colSums(sqrt(otu.m)),'/')
   meanAb = apply(otu.m,1,FUN=function(x) tapply(x, map$Lifestyle, mean)) # group mean
@@ -333,9 +333,11 @@ for (L in 1:length(bT)) {
                                     "darkorange4","brown"))) 
   dev.off()
   
+  ## Display differential taxa/stats
   # Adjust for multiple tests, sort by significance
-  Grp.Pvals = p.adjust(Grp.Pvals)
-  Wld.Pvals = p.adjust(Wld.Pvals)
+  gpb = Grp.Pvals; wpb = Wld.Pvals;
+  Grp.Pvals = p.adjust(gpb)
+  Wld.Pvals = p.adjust(wpb)
   res = data.frame(Grp.Pvals, Grp.Corrs, Wld.Pvals,row.names=rownames(otu.t))
   res = res[order(res$Grp.Corrs),]
   
@@ -456,3 +458,99 @@ for (L in 1:length(bT)) {
   )
   dev.off()
 }
+
+# Final combo heatmap
+# with more taxa
+Grp.Pvals = p.adjust(gpb)
+Wld.Pvals = p.adjust(wpb)
+res = data.frame(Grp.Pvals, Grp.Corrs, Wld.Pvals,row.names=rownames(otu.t))
+res = res[order(res$Grp.Corrs),]
+selection = res$Grp.Pvals < 0.05 & res$Wld.Pvals < 0.01 & abs(res$Grp.Corrs) > 0.45
+sum(selection)
+res = res[selection,]
+
+mat = otu.t[rownames(res),glpos]
+# Truncate names to last 2 informative levels
+split = strsplit(as.character(rownames(mat)),";")        # Split by semicolon into levels
+rownames(mat) = sapply(split,function(x) paste(tail(x,2),collapse=";")) 
+
+levels(gl)= lscolors 
+png(paste0("BiClust_dense.png"),  # create PNG for the heat map        
+    width = 8*300,                        # 8 x 300 pixels
+    height = 6*300,
+    res = 300,                              # 300 pixels per inch
+    pointsize = 9)                          # smaller font size
+heatmap.2(mat,
+          #cellnote = mat,  # same data set for cell labels
+          main = "", # heat map title
+          notecol="black",      # change font color of cell labels to black
+          density.info="none",  # turns off density plot inside color legend
+          trace="none",         # turns off trace lines inside the heat map
+          margins = c(2,22),     # widens margins around plot
+          col=my_palette,       # use on color palette defined earlier
+          #breaks=col_breaks,    # enable color transition at specified limits
+          ColSideColors = as.character(gl),
+          #dendrogram="row",     # only draw a row dendrogram
+          lhei=c(1,4.7), lwid=c(1,5),
+          labCol = "",
+          hclustfun = function(x) hclust(as.dist(1 - cor(as.matrix(x))), method="complete")
+          #Colv="NA"            # turn off column clustering
+)
+par(lend = 1)           # square line ends for the color legend
+legend("topright",      # location of the legend on the heatmap plot
+       inset=c(.1,-0), # adjust placement upward
+       legend = levels(map$Lifestyle), # category labels
+       col = levels(gl),  # color key
+       lty= 1,            # line style
+       lwd = 10,          # line width
+       cex = 0.65,
+       xpd=TRUE  # allow drawing outside
+)
+dev.off()
+
+Grp.Pvals = p.adjust(gpb)
+Wld.Pvals = p.adjust(wpb)
+res = data.frame(Grp.Pvals, Grp.Corrs, Wld.Pvals,row.names=rownames(otu.t))
+res = res[order(res$Grp.Corrs),]
+selection = res$Grp.Pvals < 0.05 & res$Wld.Pvals < 0.001 & abs(res$Grp.Corrs) > 0.8
+sum(selection)
+res = res[selection,]
+
+mat = otu.t[rownames(res),glpos]
+# Truncate names to last 2 informative levels
+split = strsplit(as.character(rownames(mat)),";")        # Split by semicolon into levels
+rownames(mat) = sapply(split,function(x) paste(tail(x,2),collapse=";")) 
+
+levels(gl)= lscolors 
+png(paste0("BiClust_sparse.png"),  # create PNG for the heat map        
+    width = 8*300,                        # 8 x 300 pixels
+    height = 6*300,
+    res = 300,                              # 300 pixels per inch
+    pointsize = 9)                          # smaller font size
+heatmap.2(mat,
+          #cellnote = mat,  # same data set for cell labels
+          main = "", # heat map title
+          notecol="black",      # change font color of cell labels to black
+          density.info="none",  # turns off density plot inside color legend
+          trace="none",         # turns off trace lines inside the heat map
+          margins = c(2,22),     # widens margins around plot
+          col=my_palette,       # use on color palette defined earlier
+          #breaks=col_breaks,    # enable color transition at specified limits
+          ColSideColors = as.character(gl),
+          #dendrogram="row",     # only draw a row dendrogram
+          lhei=c(1,4.7), lwid=c(1,5),
+          labCol = "",
+          hclustfun = function(x) hclust(as.dist(1 - cor(as.matrix(x))), method="complete")
+          #Colv="NA"            # turn off column clustering
+)
+par(lend = 1)           # square line ends for the color legend
+legend("topright",      # location of the legend on the heatmap plot
+       inset=c(.1,-0), # adjust placement upward
+       legend = levels(map$Lifestyle), # category labels
+       col = levels(gl),  # color key
+       lty= 1,            # line style
+       lwd = 10,          # line width
+       cex = 0.65,
+       xpd=TRUE  # allow drawing outside
+)
+dev.off()
